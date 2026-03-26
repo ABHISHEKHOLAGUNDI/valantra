@@ -3,7 +3,7 @@ import { useState, useEffect } from "react";
 import { motion, AnimatePresence } from "framer-motion";
 import ScrollReveal from "./ScrollReveal";
 import MagneticButton from "./MagneticButton";
-import { playClickSound } from "@/utils/audio";
+import { playStepSound, playSubmitSound, playBackToTopSound } from "@/utils/audio";
 
 const questions = [
   { id: 1, text: "Let's start with your name.", type: "text", placeholder: "John Doe" },
@@ -37,8 +37,10 @@ export default function ContactSection() {
     if (!formData[step]) return;
 
     if (step < questions.length - 1) {
+      playStepSound();
       setStep(s => s + 1);
     } else {
+      playSubmitSound();
       setIsSubmitting(true);
       setTimeout(() => {
         setIsSubmitting(false);
@@ -48,7 +50,7 @@ export default function ContactSection() {
   };
 
   const handleTop = () => {
-    playClickSound();
+    playBackToTopSound();
     window.scrollTo({ top: 0, behavior: "smooth" });
   };
 
