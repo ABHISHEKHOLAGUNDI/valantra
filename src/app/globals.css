@@ -1,26 +1,68 @@
 @import "tailwindcss";
 
-:root {
-  --background: #ffffff;
-  --foreground: #171717;
+@theme {
+  --font-sans: var(--font-outfit), ui-sans-serif, system-ui, sans-serif;
+  --font-display: var(--font-space-grotesk), ui-sans-serif, system-ui, sans-serif;
+  --color-neon-yellow: #e6f120;
+  --color-dark-bg: #050505;
 }
 
-@theme inline {
-  --color-background: var(--background);
-  --color-foreground: var(--foreground);
-  --font-sans: var(--font-geist-sans);
-  --font-mono: var(--font-geist-mono);
+/* Extra Utilities */
+.scrollbar-hide::-webkit-scrollbar {
+  display: none;
+}
+.scrollbar-hide {
+  -ms-overflow-style: none; /* IE and Edge */
+  scrollbar-width: none; /* Firefox */
 }
 
-@media (prefers-color-scheme: dark) {
-  :root {
-    --background: #0a0a0a;
-    --foreground: #ededed;
-  }
-}
 
 body {
-  background: var(--background);
+  background-color: var(--background);
   color: var(--foreground);
-  font-family: Arial, Helvetica, sans-serif;
+}
+
+/* Lenis Scroll CSS */
+html.lenis, html.lenis body {
+  height: auto;
+  width: 100vw;
+}
+
+.lenis.lenis-smooth {
+  scroll-behavior: auto !important;
+}
+
+.lenis.lenis-smooth [data-lenis-prevent] {
+  overscroll-behavior: contain;
+}
+
+.lenis.lenis-stopped {
+  overflow: hidden;
+}
+
+.lenis.lenis-smooth iframe {
+  pointer-events: none;
+}
+
+/* Fluid Gradient Blob Animations - GPU Accelerated */
+@keyframes blob {
+  0% { transform: translate3d(0px, 0px, 0) scale(1); }
+  33% { transform: translate3d(40px, -60px, 0) scale(1.1); }
+  66% { transform: translate3d(-30px, 40px, 0) scale(0.9); }
+  100% { transform: translate3d(0px, 0px, 0) scale(1); }
+}
+
+.animate-blob {
+  animation: blob 15s infinite ease-in-out;
+  will-change: transform;
+  transform: translateZ(0); /* Force Hardware Acceleration */
+  backface-visibility: hidden;
+}
+
+.animation-delay-2000 {
+  animation-delay: -5s;
+}
+
+.animation-delay-4000 {
+  animation-delay: -10s;
 }
