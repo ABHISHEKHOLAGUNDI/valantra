@@ -65,7 +65,7 @@ export default function Hero({ location }: { location?: { city: string; state: s
     const ctx = gsap.context(() => {
       const tl = gsap.timeline({ delay: 0.8 });
 
-      tl.fromTo(badgeRef.current, { y: -30, opacity: 0 }, { y: 0, opacity: 1, duration: 0.6, ease: "power3.out" }, 0);
+
       tl.fromTo(lineRef.current, { scaleX: 0 }, { scaleX: 1, duration: 0.8, ease: "power4.inOut" }, 0.2);
       tl.fromTo(titleRef.current, { y: 80, opacity: 0, skewY: 6 }, { y: 0, opacity: 1, skewY: 0, duration: 1, ease: "expo.out" }, 0.3);
       tl.fromTo(taglineRef.current, { y: 30, opacity: 0 }, { y: 0, opacity: 1, duration: 0.8, ease: "power3.out" }, 0.7);
@@ -153,19 +153,7 @@ export default function Hero({ location }: { location?: { city: string; state: s
         ))}
       </div>
 
-      {/* Status badge */}
-      <div
-        ref={badgeRef}
-        className="relative z-30 mb-8 md:mb-10 flex items-center gap-3 px-5 py-2.5 rounded-full border border-white/10 bg-black/40 backdrop-blur-md opacity-0"
-      >
-        <span className="relative flex h-2.5 w-2.5">
-          <span className="animate-ping absolute inline-flex h-full w-full rounded-full bg-[#ccff00] opacity-60" />
-          <span className="relative inline-flex rounded-full h-2.5 w-2.5 bg-[#ccff00]" />
-        </span>
-        <span className="font-mono text-[10px] md:text-xs tracking-[0.25em] text-white/60 uppercase">
-          Available for Projects — 2026
-        </span>
-      </div>
+
 
       {/* Main title block */}
       <div className="relative z-30 flex flex-col items-center gap-0 px-4">
