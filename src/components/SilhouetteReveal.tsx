@@ -67,11 +67,13 @@ export default function SilhouetteReveal() {
               </span>
             </div>
 
-            {/* Inner scrollable area removed — now natively scrolls with page */}
+            {/* Inner scrollable area restored — separate window scroll */}
             <div 
+              ref={scrollContainerRef}
               onMouseEnter={() => setIsHovering(true)}
               onMouseLeave={() => setIsHovering(false)}
-              className="w-full"
+              className="max-h-[55vh] md:max-h-[50vh] overflow-y-auto scrollbar-hide overscroll-contain"
+              data-lenis-prevent
             >
               <div className="flex flex-col gap-0 p-3 md:p-6">
                 {faqs.map((faq, i) => {
