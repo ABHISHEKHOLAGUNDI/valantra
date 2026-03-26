@@ -4,7 +4,7 @@ import gsap from "gsap";
 import { ScrollTrigger } from "gsap/ScrollTrigger";
 import TextReveal from "./TextReveal";
 
-export default function AdvantageSection() {
+export default function AdvantageSection({ location }: { location?: { city: string; state: string } }) {
   const containerRef = useRef<HTMLDivElement>(null);
   const valantraCardRef = useRef<HTMLDivElement>(null);
   const otherCardRef = useRef<HTMLDivElement>(null);
@@ -74,7 +74,9 @@ export default function AdvantageSection() {
                ref={otherCardRef}
                className="bg-[#050505] border border-white/5 rounded-[2rem] p-8 md:p-14 flex flex-col items-start opacity-0"
              >
-               <h3 className="font-display font-black text-xl md:text-2xl uppercase tracking-widest mb-10 text-white/40 text-left">Other Agencies</h3>
+               <h3 className="font-display font-black text-xl md:text-2xl uppercase tracking-widest mb-10 text-white/40 text-left">
+                 {location ? `Average ${location.city} Agencies` : "Other Agencies"}
+               </h3>
                <ul className="flex flex-col gap-6 font-mono text-sm md:text-[15px] text-white/30 w-full leading-relaxed">
                  <li className="flex items-start gap-4"><span className="text-red-900/80 font-bold mt-[2px] text-lg shrink-0 leading-none">×</span> Generic WordPress Templates</li>
                  <li className="flex items-start gap-4"><span className="text-red-900/80 font-bold mt-[2px] text-lg shrink-0 leading-none">×</span> Single-threaded slow load times</li>

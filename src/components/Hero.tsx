@@ -8,7 +8,7 @@ if (typeof window !== "undefined") {
   gsap.registerPlugin(ScrollTrigger);
 }
 
-export default function Hero() {
+export default function Hero({ location }: { location?: { city: string; state: string } }) {
   const containerRef = useRef<HTMLDivElement>(null);
   const forestRef = useRef<HTMLDivElement>(null);
   const titleRef = useRef<HTMLHeadingElement>(null);
@@ -176,8 +176,16 @@ export default function Hero() {
         />
 
         <div className="overflow-hidden">
-          <h1
+          {/* Ghost DOM for exact-match SEO targeting */}
+          <h1 className="sr-only">
+            {location
+              ? `Premium Fullstack Website Design in ${location.city}, ${location.state}`
+              : "Valantra Studio - Premium Fullstack Digital Agency"}
+          </h1>
+          
+          <div
             ref={titleRef}
+            role="presentation"
             className="font-display text-[clamp(3rem,13vw,10rem)] md:text-[clamp(5rem,11vw,13rem)] font-black uppercase tracking-[-0.04em] text-white leading-[0.85] text-center select-none opacity-0 drop-shadow-[0_4px_60px_rgba(0,0,0,0.8)]"
           >
             Valantra
@@ -185,13 +193,18 @@ export default function Hero() {
             <span className="text-transparent bg-clip-text bg-gradient-to-r from-white via-white/90 to-white/60">
               Studio
             </span>
-          </h1>
+          </div>
         </div>
 
         <div
           ref={taglineRef}
           className="mt-6 md:mt-10 flex flex-col items-center gap-3 opacity-0"
         >
+          <h2 className="sr-only">
+             {location 
+               ? `Award-Winning Website Making Agency for ${location.city} Businesses | Custom React & Next.js Fullstack Websites`
+               : "Award-Winning Website Making Agency | Custom React & Next.js Fullstack Websites"}
+          </h2>
           <p className="font-sans text-white/50 text-sm md:text-lg tracking-[0.15em] uppercase text-center max-w-xl leading-relaxed drop-shadow-lg">
             We build <span className="text-white/90 font-semibold">AI-native</span> digital experiences that
             <span className="text-[#ccff00]/80 font-semibold"> outperform everything.</span>
