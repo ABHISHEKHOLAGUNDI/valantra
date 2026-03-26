@@ -1,21 +1,16 @@
 "use client";
-import { useEffect, useRef, useState } from "react";
-import gsap from "gsap";
-import { ScrollTrigger } from "gsap/ScrollTrigger";
+import { useState } from "react";
 import { motion, AnimatePresence } from "framer-motion";
 import { playClickSound, playHoverSound } from "@/utils/audio";
 
 const faqs = [
   { q: "What defines your architecture?", a: "We strictly engineer Next.js Server Components bound to raw WebGL contexts. It results in brutal 60FPS fluid interactions with First Contentful Paints hovering near 0ms." },
-  { q: "Do you use templates?", a: "Negative. Every structural component, GSAP math timeline, and GLSL fluid shader is coded entirely from scratch specifically mapped to your brand’s aggressive aesthetic matrix." },
+  { q: "Do you use templates?", a: "Negative. Every structural component, GSAP math timeline, and GLSL fluid shader is coded entirely from scratch specifically mapped to your brand's aggressive aesthetic matrix." },
   { q: "What is your typical turnaround?", a: "Complete monolithic deployments average 4-6 weeks depending on WebGL complexity, 3D render limits, and backend serverless agentic integrations." },
   { q: "How do we initialize a project?", a: "Trigger the contact terminal sequence interface. We will execute a direct high-frequency discovery transmission with your stakeholders within 12 hours." }
 ];
 
 export default function SilhouetteReveal() {
-  const containerRef = useRef<HTMLDivElement>(null);
-  const textRef = useRef<HTMLHeadingElement>(null);
-
   const [openIndex, setOpenIndex] = useState<number | null>(0);
 
   const toggleAccordion = (i: number) => {
@@ -23,37 +18,17 @@ export default function SilhouetteReveal() {
     setOpenIndex(openIndex === i ? null : i);
   };
 
-  useEffect(() => {
-    gsap.registerPlugin(ScrollTrigger);
-    
-    const tl = gsap.timeline({
-      scrollTrigger: {
-        trigger: containerRef.current,
-        start: "top bottom",
-        end: "bottom center",
-        scrub: 1.2,
-      }
-    });
-
-    tl.to(textRef.current, { y: "-30vh", ease: "none" }, 0);
-
-    return () => {
-      tl.kill();
-    };
-  }, []);
-
   return (
-    <section ref={containerRef} id="faq" className="relative bg-[#050505] w-full flex flex-col items-center justify-start border-t border-white/5 pb-32">
+    <section id="faq" className="relative bg-[#050505] w-full flex flex-col items-center justify-start border-t border-white/5 pb-32 overflow-hidden">
        {/* Background Atmospheric Noise */}
        <div className="absolute inset-0 bg-noise opacity-30 mix-blend-overlay pointer-events-none z-0" />
        
        {/* Typography Header */}
-       <div className="relative w-full py-16 md:py-24 flex flex-col items-center justify-center z-10">
+       <div className="relative w-full py-16 md:py-24 flex flex-col items-center justify-center z-10 overflow-hidden">
          <h1 
-           ref={textRef} 
            className="font-display font-black text-[15vw] md:text-[10vw] leading-[0.85] tracking-tighter uppercase text-center 
                       text-transparent bg-clip-text bg-gradient-to-b from-[#ccff00] to-[#ccff00]/20
-                      drop-shadow-[0_0_80px_rgba(204,255,0,0.3)] will-change-transform"
+                      drop-shadow-[0_0_80px_rgba(204,255,0,0.3)]"
          >
            OPERATIONAL <br/> INTEL.
          </h1>
