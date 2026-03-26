@@ -27,7 +27,7 @@ export default function Navigation() {
       threshold: 0
     });
 
-    const sections = ["home", "edge", "advantage", "workfolio", "store", "testimonials", "contact"];
+    const sections = ["home", "advantage", "workfolio", "store", "testimonials", "faq", "contact"];
     sections.forEach(sect => {
       const el = document.getElementById(sect);
       if (el) observer.observe(el);
@@ -37,11 +37,11 @@ export default function Navigation() {
   }, []);
 
   const links = [
-    { name: "Home", path: "#home", icon: <HomeIcon /> },
+    { name: "Hero", path: "#home", icon: <HomeIcon /> },
     { name: "Advantage", path: "#advantage", icon: <AdvantageIcon /> },
-    { name: "Work", path: "#workfolio", icon: <WorkIcon /> },
-    { name: "Arsenal", path: "#store", icon: <StoreIcon /> },
-    { name: "Call", path: "#contact", icon: <ContactIcon /> },
+    { name: "Workfolio", path: "#workfolio", icon: <WorkIcon /> },
+    { name: "Store", path: "#store", icon: <StoreIcon /> },
+    { name: "Contact", path: "#contact", icon: <ContactIcon /> },
   ];
 
   const handleSmoothScroll = (e: React.MouseEvent<HTMLAnchorElement>, hash: string) => {
