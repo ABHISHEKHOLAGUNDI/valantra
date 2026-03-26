@@ -80,9 +80,8 @@ export default function Hero() {
           scrollTrigger: {
             trigger: containerRef.current,
             start: "top top",
-            end: "+=100%",
+            end: "bottom top",
             scrub: 1,
-            pin: true,
           }
         });
       });
