@@ -136,15 +136,6 @@ export default function Hero() {
         />
       )}
 
-      {/* Corner decorative elements */}
-      <div className="absolute top-8 left-8 md:top-16 md:left-20 flex flex-col gap-1 z-20">
-        <div className="w-8 h-[2px] bg-[#ccff00]/40" />
-        <div className="w-4 h-[2px] bg-[#ccff00]/20" />
-      </div>
-      <div className="absolute top-8 right-8 md:top-16 md:right-20 flex flex-col gap-1 items-end z-20">
-        <div className="w-8 h-[2px] bg-[#ccff00]/40" />
-        <div className="w-4 h-[2px] bg-[#ccff00]/20" />
-      </div>
 
       {/* Ambient firefly particles (CSS) */}
       <div className="absolute inset-0 z-[6] pointer-events-none overflow-hidden">
