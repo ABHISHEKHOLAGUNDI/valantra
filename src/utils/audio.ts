@@ -197,3 +197,45 @@ export const playCardHoverSound = () => safePlay((ctx) => {
   osc.connect(gain).connect(ctx.destination);
   osc.start(); osc.stop(ctx.currentTime + 0.1);
 });
+
+// 13. MECHANICAL KEYBOARD TYPING — Instant zero-latency key click
+// Uses noise burst + sharp high-freq transient for authentic mechanical feel
+// Slight randomization prevents robotic repetition
+export const playTypeSound = () => safePlay((ctx) => {
+  const t = ctx.currentTime;
+
+  // Layer 1: Short noise burst (the "thock" body)
+  const bufferSize = ctx.sampleRate * 0.025; // 25ms
+  const buffer = ctx.createBuffer(1, bufferSize, ctx.sampleRate);
+  const data = buffer.getChannelData(0);
+  for (let i = 0; i < bufferSize; i++) {
+    data[i] = (Math.random() * 2 - 1) * Math.exp(-i / (bufferSize * 0.15));
+  }
+  const noise = ctx.createBufferSource();
+  noise.buffer = buffer;
+
+  // Bandpass to shape the "plastic key" character
+  const filter = ctx.createBiquadFilter();
+  filter.type = "bandpass";
+  filter.frequency.value = 2000 + Math.random() * 1500; // 2000-3500Hz randomized
+  filter.Q.value = 1.2;
+
+  const noiseGain = ctx.createGain();
+  noiseGain.gain.setValueAtTime(0.06, t);
+  noiseGain.gain.exponentialRampToValueAtTime(0.001, t + 0.025);
+
+  noise.connect(filter).connect(noiseGain).connect(ctx.destination);
+  noise.start(t);
+  noise.stop(t + 0.025);
+
+  // Layer 2: Sharp click transient (the "snap")
+  const click = ctx.createOscillator();
+  const clickGain = ctx.createGain();
+  click.type = "square";
+  click.frequency.value = 3000 + Math.random() * 2000; // Randomize pitch
+  clickGain.gain.setValueAtTime(0.02, t);
+  clickGain.gain.exponentialRampToValueAtTime(0.001, t + 0.008);
+  click.connect(clickGain).connect(ctx.destination);
+  click.start(t);
+  click.stop(t + 0.008);
+});

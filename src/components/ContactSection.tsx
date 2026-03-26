@@ -3,7 +3,7 @@ import { useState, useEffect } from "react";
 import { motion, AnimatePresence } from "framer-motion";
 import ScrollReveal from "./ScrollReveal";
 import MagneticButton from "./MagneticButton";
-import { playStepSound, playSubmitSound, playBackToTopSound } from "@/utils/audio";
+import { playStepSound, playSubmitSound, playBackToTopSound, playTypeSound } from "@/utils/audio";
 
 const questions = [
   { id: 1, text: "Let's start with your name.", type: "text", placeholder: "John Doe" },
@@ -90,7 +90,7 @@ export default function ContactSection() {
                   type={questions[step].type}
                   placeholder={questions[step].placeholder}
                   value={formData[step] || ""}
-                  onChange={(e) => setFormData({...formData, [step]: e.target.value})}
+                  onChange={(e) => { playTypeSound(); setFormData({...formData, [step]: e.target.value}); }}
                   className="w-full bg-transparent border-b border-white/20 text-2xl md:text-4xl lg:text-5xl font-sans py-3 focus:outline-none focus:border-[#ccff00] transition-colors placeholder:text-white/10 text-white shadow-none rounded-none"
                 />
               </div>
@@ -98,7 +98,7 @@ export default function ContactSection() {
               <div className="flex flex-col-reverse md:flex-row justify-between items-center mt-6 md:mt-10 z-20 gap-4 w-full">
                  <button 
                    type="button" 
-                   onClick={() => setStep(s => Math.max(0, s - 1))}
+                   onClick={() => { playStepSound(); setStep(s => Math.max(0, s - 1)); }}
                    className={`text-white/50 hover:text-white py-3 uppercase tracking-widest text-[10px] md:text-sm font-bold transition-colors w-full md:w-auto ${step === 0 ? 'opacity-0 pointer-events-none' : ''}`}
                  >
                    ← Back
