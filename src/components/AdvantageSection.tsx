@@ -58,7 +58,7 @@ export default function AdvantageSection() {
   };
 
   return (
-    <section ref={containerRef} id="advantage" className="relative bg-[#000000] w-full min-h-[100dvh] py-24 md:py-32 px-5 md:px-20 overflow-clip border-t border-white/5 z-40">
+    <section ref={containerRef} id="advantage" className="relative bg-[#000000] w-full pt-12 md:pt-16 pb-24 md:pb-32 px-5 md:px-20 overflow-clip border-t border-white/5 z-40">
        <div className="absolute inset-0 bg-noise opacity-15 mix-blend-overlay pointer-events-none z-0"></div>
 
        <div className="max-w-7xl mx-auto relative z-10">
@@ -81,6 +81,9 @@ export default function AdvantageSection() {
                  <li className="flex items-start gap-4"><span className="text-red-900/80 font-bold mt-[2px] text-lg shrink-0 leading-none">×</span> Basic UI Component copy-pasting</li>
                  <li className="flex items-start gap-4"><span className="text-red-900/80 font-bold mt-[2px] text-lg shrink-0 leading-none">×</span> Reliant on 3rd party bloated plugins</li>
                  <li className="flex items-start gap-4"><span className="text-red-900/80 font-bold mt-[2px] text-lg shrink-0 leading-none">×</span> Weeks to resolve simple architecture bugs</li>
+                 <li className="flex items-start gap-4"><span className="text-red-900/80 font-bold mt-[2px] text-lg shrink-0 leading-none">×</span> Outdated SEO metadata practices</li>
+                 <li className="flex items-start gap-4"><span className="text-red-900/80 font-bold mt-[2px] text-lg shrink-0 leading-none">×</span> Fragmented team communication</li>
+                 <li className="flex items-start gap-4"><span className="text-red-900/80 font-bold mt-[2px] text-lg shrink-0 leading-none">×</span> Unpredictable pricing and scope creep</li>
                </ul>
              </div>
 
@@ -133,6 +136,24 @@ export default function AdvantageSection() {
                      <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="#ccff00" strokeWidth="4" strokeLinecap="round" strokeLinejoin="round"><polyline points="20 6 9 17 4 12"/></svg>
                    </div>
                    Sub-Second Global Architecture
+                 </li>
+                 <li className="flex items-start gap-4">
+                   <div className="flex items-center justify-center w-6 h-6 rounded-full border border-[#ccff00]/40 bg-[#ccff00]/10 shadow-[0_0_15px_rgba(204,255,0,0.3)] shrink-0 mt-[2px]">
+                     <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="#ccff00" strokeWidth="4" strokeLinecap="round" strokeLinejoin="round"><polyline points="20 6 9 17 4 12"/></svg>
+                   </div>
+                   Algorithmic SEO Optimization Engine
+                 </li>
+                 <li className="flex items-start gap-4">
+                   <div className="flex items-center justify-center w-6 h-6 rounded-full border border-[#ccff00]/40 bg-[#ccff00]/10 shadow-[0_0_15px_rgba(204,255,0,0.3)] shrink-0 mt-[2px]">
+                     <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="#ccff00" strokeWidth="4" strokeLinecap="round" strokeLinejoin="round"><polyline points="20 6 9 17 4 12"/></svg>
+                   </div>
+                   Real-Time Synchronous Collaboration
+                 </li>
+                 <li className="flex items-start gap-4">
+                   <div className="flex items-center justify-center w-6 h-6 rounded-full border border-[#ccff00]/40 bg-[#ccff00]/10 shadow-[0_0_15px_rgba(204,255,0,0.3)] shrink-0 mt-[2px]">
+                     <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="#ccff00" strokeWidth="4" strokeLinecap="round" strokeLinejoin="round"><polyline points="20 6 9 17 4 12"/></svg>
+                   </div>
+                   Transparent Fixed-Scope Deployments
                  </li>
                </ul>
              </div>
