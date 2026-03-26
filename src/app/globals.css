@@ -66,3 +66,13 @@ html.lenis, html.lenis body {
 .animation-delay-4000 {
   animation-delay: -10s;
 }
+
+/* Hero Scroll Indicator */
+@keyframes scroll-line {
+  0% { transform: translateY(-100%); }
+  100% { transform: translateY(100%); }
+}
+
+.animate-scroll-line {
+  animation: scroll-line 1.8s ease-in-out infinite;
+}
