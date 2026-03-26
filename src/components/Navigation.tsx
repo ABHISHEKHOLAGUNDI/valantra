@@ -84,8 +84,11 @@ export default function Navigation() {
             ))}
           </ul>
           
-          <MagneticButton className="px-8 py-4 bg-[#ccff00] text-black rounded-full font-black uppercase tracking-widest text-xs hover:bg-white transition-colors shadow-[0_0_40px_rgba(204,255,0,0.3)]">
-             <a href="#contact" aria-label="Initiate contact protocol sequence" onClick={(e) => handleSmoothScroll(e, "#contact")} className="block w-full h-full">Start a Project</a>
+          <MagneticButton 
+            onClick={(e) => handleSmoothScroll(e as any, "#contact")}
+            className="px-8 py-4 bg-[#ccff00] text-black rounded-full font-black uppercase tracking-widest text-xs hover:bg-white transition-colors shadow-[0_0_40px_rgba(204,255,0,0.3)]"
+          >
+             <span aria-label="Initiate contact protocol sequence" className="block w-full h-full pointer-events-none">Start a Project</span>
           </MagneticButton>
         </div>
       </div>

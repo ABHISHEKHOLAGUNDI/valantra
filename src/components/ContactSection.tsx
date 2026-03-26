@@ -86,7 +86,6 @@ export default function ContactSection() {
               
               <div className="relative mt-4 md:mt-8 w-full">
                 <input 
-                  autoFocus
                   type={questions[step].type}
                   placeholder={questions[step].placeholder}
                   value={formData[step] || ""}
