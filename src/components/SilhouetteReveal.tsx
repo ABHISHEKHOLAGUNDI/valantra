@@ -1,7 +1,7 @@
 "use client";
 import { useState, useRef, useEffect } from "react";
 import { motion, AnimatePresence } from "framer-motion";
-import { playFaqHoverSound, playExpandSound, playCollapseSound } from "@/utils/audio";
+import { playExpandSound, playCollapseSound } from "@/utils/audio";
 
 const faqs = [
   { q: "What defines your architecture?", a: "We strictly engineer Next.js Server Components bound to raw WebGL contexts. It results in brutal 60FPS fluid interactions with First Contentful Paints hovering near 0ms." },
@@ -33,25 +33,7 @@ export default function SilhouetteReveal() {
     }
   };
 
-  // Prevent page scroll when cursor is inside the FAQ scroll container
-  useEffect(() => {
-    const el = scrollContainerRef.current;
-    if (!el) return;
 
-    const handleWheel = (e: WheelEvent) => {
-      const { scrollTop, scrollHeight, clientHeight } = el;
-      const atTop = scrollTop <= 0 && e.deltaY < 0;
-      const atBottom = scrollTop + clientHeight >= scrollHeight - 1 && e.deltaY > 0;
-
-      // Only prevent default if we're NOT at the boundaries
-      if (!atTop && !atBottom) {
-        e.stopPropagation();
-      }
-    };
-
-    el.addEventListener("wheel", handleWheel, { passive: false });
-    return () => el.removeEventListener("wheel", handleWheel);
-  }, []);
 
   return (
     <section id="faq" className="relative bg-[#050505] w-full flex flex-col items-center justify-start border-t border-white/5 pb-20 md:pb-32 overflow-hidden">
@@ -90,7 +72,7 @@ export default function SilhouetteReveal() {
               ref={scrollContainerRef}
               onMouseEnter={() => setIsHovering(true)}
               onMouseLeave={() => setIsHovering(false)}
-              className="max-h-[55vh] md:max-h-[50vh] overflow-y-auto scrollbar-hide overscroll-contain"
+              className="max-h-[55vh] md:max-h-[50vh] overflow-y-auto scrollbar-hide"
               data-lenis-prevent
             >
               <div className="flex flex-col gap-0 p-3 md:p-6">
@@ -100,7 +82,6 @@ export default function SilhouetteReveal() {
                     <div key={i} className="border-b border-white/[0.06] flex flex-col group/faq last:border-b-0">
                       <button 
                         onClick={() => toggleAccordion(i)}
-                        onMouseEnter={playFaqHoverSound}
                         className="flex justify-between items-center w-full py-5 md:py-7 group text-left outline-none hover:bg-white/[0.02] transition-colors rounded-xl px-4"
                       >
                         <div className="flex items-center gap-4">
