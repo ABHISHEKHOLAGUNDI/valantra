@@ -79,12 +79,19 @@ export default function WorkfolioSection() {
        <div className="absolute inset-0 bg-noise pointer-events-none mix-blend-overlay opacity-10"></div>
        <div className="hidden md:block absolute inset-0 pointer-events-none opacity-[0.02]" style={{ backgroundImage: "repeating-linear-gradient(45deg, #fff 25%, transparent 25%, transparent 75%, #fff 75%, #fff), repeating-linear-gradient(45deg, #fff 25%, transparent 25%, transparent 75%, #fff 75%, #fff)", backgroundSize: "20px 20px" }} />
        
+       {/* Mobile swipe indicator */}
+       <div className="absolute bottom-24 left-0 w-full flex justify-center md:hidden pointer-events-none z-30">
+         <div className="bg-black/40 backdrop-blur-md border border-[#ccff00]/20 px-4 py-2 rounded-full font-mono text-[8px] text-[#ccff00]/90 uppercase tracking-[0.3em] flex items-center gap-2">
+           <span className="animate-pulse">←</span> Swipe Workfolio <span className="animate-pulse">→</span>
+         </div>
+       </div>
+       
        <div className="w-full h-full md:overflow-visible overflow-x-auto overflow-y-hidden snap-x snap-mandatory flex items-center scrollbar-hide z-10">
          <div ref={scrollRef} className="flex gap-6 md:gap-20 px-6 md:px-[20vw] mt-24 md:mt-20 h-auto md:h-[60%] w-max md:w-fit items-center">
            {projects.map((project) => (
              <div 
                key={project.id} 
-               className="w-[85vw] md:w-[85vw] max-w-[400px] md:max-w-[650px] h-[55vh] md:h-full shrink-0 snap-center"
+               className="w-[75vw] md:w-[85vw] max-w-[400px] md:max-w-[650px] h-[55vh] md:h-full shrink-0 snap-center"
                onMouseEnter={() => setHoveredColor(project.color)}
                onMouseLeave={() => setHoveredColor("rgba(0,0,0,0)")}
              >

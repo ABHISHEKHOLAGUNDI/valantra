@@ -55,12 +55,12 @@ export default function SilhouetteReveal() {
   }, []);
 
   return (
-    <section id="faq" className="relative bg-[#050505] w-full flex flex-col items-center justify-start border-t border-white/5 pb-20 md:pb-32 overflow-hidden">
+    <section id="faq" className="relative bg-[#050505] w-full flex flex-col items-center justify-start border-t border-white/5 pb-12 md:pb-32 overflow-hidden">
        {/* Background Atmospheric Noise */}
        <div className="absolute inset-0 bg-noise opacity-30 mix-blend-overlay pointer-events-none z-0" />
        
        {/* Typography Header */}
-       <div className="relative w-full py-12 md:py-20 flex flex-col items-center justify-center z-10 overflow-hidden">
+       <div className="relative w-full py-8 md:py-20 flex flex-col items-center justify-center z-10 overflow-hidden">
          <h1 
            className="font-display font-black text-[15vw] md:text-[10vw] leading-[0.85] tracking-tighter uppercase text-center 
                       text-transparent bg-clip-text bg-gradient-to-b from-[#ccff00] to-[#ccff00]/20
@@ -101,7 +101,7 @@ export default function SilhouetteReveal() {
                     <div key={i} className="border-b border-white/[0.06] flex flex-col group/faq last:border-b-0">
                       <button 
                         onClick={() => toggleAccordion(i)}
-                        className="flex justify-between items-center w-full py-5 md:py-7 group text-left outline-none hover:bg-white/[0.02] transition-colors rounded-xl px-4"
+                        className="flex justify-between items-center w-full py-4 md:py-7 group text-left outline-none hover:bg-white/[0.02] transition-colors rounded-xl px-4"
                       >
                         <div className="flex items-center gap-4">
                           <span className={`font-mono text-[10px] md:text-xs transition-colors duration-300 ${isOpen ? 'text-[#ccff00]' : 'text-white/15'}`}>

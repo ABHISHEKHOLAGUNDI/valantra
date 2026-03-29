@@ -58,26 +58,26 @@ export default function AdvantageSection({ location }: { location?: { city: stri
   };
 
   return (
-    <section ref={containerRef} id="advantage" className="relative bg-[#000000] w-full pt-12 md:pt-16 pb-24 md:pb-32 px-5 md:px-20 overflow-clip border-t border-white/5 z-40">
+    <section ref={containerRef} id="advantage" className="relative bg-[#000000] w-full py-10 md:py-32 px-5 md:px-20 overflow-clip border-t border-white/5 z-40">
        <div className="absolute inset-0 bg-noise opacity-15 mix-blend-overlay pointer-events-none z-0"></div>
 
        <div className="max-w-7xl mx-auto relative z-10">
-          <TextReveal className="mb-12 md:mb-20">
+          <TextReveal className="mb-8 md:mb-20">
              <h2 className="font-display text-4xl md:text-[7vw] font-black uppercase tracking-tighter leading-none text-white drop-shadow-xl text-center md:text-left">
                The <span className="text-white md:mix-blend-exclusion">Valantra</span> <br className="hidden md:block" /> <span className="text-[#ccff00] mix-blend-screen md:drop-shadow-[0_0_20px_#ccff00]">Advantage.</span>
              </h2>
           </TextReveal>
 
-          <div className="grid grid-cols-1 lg:grid-cols-2 gap-8 md:gap-16">
+          <div className="grid grid-cols-1 lg:grid-cols-2 gap-4 md:gap-16">
              {/* "Them" Column - Muted Brutalist */}
              <div 
                ref={otherCardRef}
-               className="bg-[#050505] border border-white/5 rounded-[2rem] p-8 md:p-14 flex flex-col items-start opacity-0"
+               className="bg-[#050505] border border-white/5 rounded-[2rem] p-6 md:p-14 flex flex-col items-start opacity-0"
              >
                <h3 className="font-display font-black text-xl md:text-2xl uppercase tracking-widest mb-10 text-white/40 text-left">
                  {location ? `Average ${location.city} Agencies` : "Other Agencies"}
                </h3>
-               <ul className="flex flex-col gap-6 font-mono text-sm md:text-[15px] text-white/30 w-full leading-relaxed">
+               <ul className="flex flex-col gap-4 md:gap-6 font-mono text-sm md:text-[15px] text-white/30 w-full leading-relaxed">
                  <li className="flex items-start gap-4"><span className="text-red-900/80 font-bold mt-[2px] text-lg shrink-0 leading-none">×</span> Generic WordPress Templates</li>
                  <li className="flex items-start gap-4"><span className="text-red-900/80 font-bold mt-[2px] text-lg shrink-0 leading-none">×</span> Single-threaded slow load times</li>
                  <li className="flex items-start gap-4"><span className="text-red-900/80 font-bold mt-[2px] text-lg shrink-0 leading-none">×</span> Basic UI Component copy-pasting</li>
@@ -93,7 +93,7 @@ export default function AdvantageSection({ location }: { location?: { city: stri
              <div 
                ref={valantraCardRef}
                onMouseMove={handleMouseMove}
-               className="relative bg-[#050505] border border-white/10 rounded-[2rem] p-8 md:p-14 flex flex-col items-start overflow-hidden group opacity-0 shadow-[0_0_30px_rgba(204,255,0,0.03)] transform-gpu"
+               className="relative bg-[#050505] border border-white/10 rounded-[2rem] p-6 md:p-14 flex flex-col items-start overflow-hidden group opacity-0 shadow-[0_0_30px_rgba(204,255,0,0.03)] transform-gpu"
              >
                {/* Hover Spotlight Gradient */}
                <div 
@@ -108,7 +108,7 @@ export default function AdvantageSection({ location }: { location?: { city: stri
                
                <h3 className="relative z-10 font-display font-black text-3xl md:text-4xl uppercase tracking-tighter mb-10 text-white text-left drop-shadow-md">Valantra Studio</h3>
                
-               <ul className="relative z-10 flex flex-col gap-8 font-sans text-[15px] md:text-lg text-white/90 font-bold w-full leading-relaxed tracking-wide">
+               <ul className="relative z-10 flex flex-col gap-4 md:gap-8 font-sans text-[15px] md:text-lg text-white/90 font-bold w-full leading-relaxed tracking-wide">
                  <li className="flex items-start gap-4">
                    <div className="flex items-center justify-center w-6 h-6 rounded-full border border-[#ccff00]/40 bg-[#ccff00]/10 shadow-[0_0_15px_rgba(204,255,0,0.3)] shrink-0 mt-[2px]">
                      <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="#ccff00" strokeWidth="4" strokeLinecap="round" strokeLinejoin="round"><polyline points="20 6 9 17 4 12"/></svg>

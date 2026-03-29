@@ -104,7 +104,7 @@ export default function Navigation() {
       <div 
         role="navigation"
         aria-label="Mobile Bottom App Context"
-        className="md:hidden fixed bottom-0 left-0 w-full bg-[#000000]/40 backdrop-blur-3xl saturate-[1.5] border-t border-white/10 z-[99999] px-4 pt-4 flex justify-around items-center pointer-events-auto"
+        className="md:hidden fixed bottom-0 left-0 w-full bg-[#000000]/60 backdrop-blur-[40px] saturate-[2.0] border-t border-white/[0.08] z-[99999] px-2 pt-3 flex justify-around items-center pointer-events-auto shadow-[0_-10px_40px_rgba(0,0,0,0.5)]"
         style={{ paddingBottom: "max(1rem, env(safe-area-inset-bottom))" }}
       >
          {links.map((link) => {
@@ -115,9 +115,9 @@ export default function Navigation() {
                href={link.path} 
                aria-label={`Slide rapidly to ${link.name}`}
                onClick={(e) => handleSmoothScroll(e, link.path)}
-               className={`flex flex-col items-center gap-1.5 transition-all duration-300 ${isActive ? 'text-[#ccff00]' : 'text-white/40'}`}
+               className={`flex flex-col items-center gap-1 transition-all duration-300 min-h-[44px] min-w-[44px] pt-1 ${isActive ? 'text-[#ccff00]' : 'text-white/40 hover:text-white/60'}`}
              >
-               <div className={`p-2 rounded-xl transition-all duration-300 ${isActive ? 'bg-[#ccff00]/10 shadow-[0_0_20px_rgba(204,255,0,0.2)] scale-110' : 'scale-100'}`}>
+               <div className={`p-2 rounded-xl transition-all duration-300 ${isActive ? 'bg-[#ccff00]/15 shadow-[0_0_25px_rgba(204,255,0,0.3)] scale-[1.15]' : 'scale-100'}`}>
                  {link.icon}
                </div>
                <span className="text-[10px] uppercase font-bold tracking-wider">{link.name}</span>

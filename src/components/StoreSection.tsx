@@ -3,11 +3,11 @@ import ScrollReveal from "./ScrollReveal";
 
 export default function StoreSection() {
   return (
-    <section id="store" className="relative bg-[#000000] w-full min-h-[100dvh] pt-48 px-6 md:px-20 overflow-clip border-t border-white/5">
+    <section id="store" className="relative bg-[#000000] w-full min-h-[100dvh] pt-24 md:pt-48 px-6 md:px-20 overflow-clip border-t border-white/5">
       <div className="absolute inset-0 bg-noise opacity-15 mix-blend-overlay pointer-events-none"></div>
 
       <div className="max-w-7xl mx-auto relative z-10">
-        <ScrollReveal className="mb-24">
+        <ScrollReveal className="mb-12 md:mb-24">
            <h1 className="font-display text-6xl md:text-[8vw] font-black uppercase tracking-tighter mix-blend-difference leading-[0.9]">
              The <br/><span className="text-[#00f0ff]">Arsenal.</span>
            </h1>

@@ -58,6 +58,15 @@ export default function Hero({ location }: { location?: { city: string; state: s
     setIsHovering(false);
   }, []);
 
+  const handleTouchMove = useCallback((e: React.TouchEvent) => {
+    const rect = containerRef.current?.getBoundingClientRect();
+    if (!rect) return;
+    const x = e.touches[0].clientX - rect.left;
+    const y = e.touches[0].clientY - rect.top;
+    targetRef.current = { x, y };
+    if (!isHovering) setIsHovering(true);
+  }, [isHovering]);
+
   // GSAP entrance
   useEffect(() => {
     if (!containerRef.current) return;
@@ -96,6 +105,9 @@ export default function Hero({ location }: { location?: { city: string; state: s
       ref={containerRef}
       onMouseMove={handleMouseMove}
       onMouseLeave={handleMouseLeave}
+      onTouchMove={handleTouchMove}
+      onTouchStart={handleTouchMove}
+      onTouchEnd={handleMouseLeave}
       className="relative h-[100dvh] min-h-[600px] w-full flex flex-col items-center justify-center overflow-clip bg-[#050505] cursor-crosshair"
     >
       {/* Layer 0: Deep black base */}
@@ -173,8 +185,7 @@ export default function Hero({ location }: { location?: { city: string; state: s
           
           <div
             ref={titleRef}
-            role="presentation"
-            className="font-display text-[clamp(3rem,13vw,10rem)] md:text-[clamp(5rem,11vw,13rem)] font-black uppercase tracking-[-0.04em] text-white leading-[0.85] text-center select-none opacity-0 drop-shadow-[0_4px_60px_rgba(0,0,0,0.8)]"
+            className="font-display text-[clamp(2.5rem,13vw,10rem)] md:text-[clamp(5rem,11vw,13rem)] font-black uppercase tracking-[-0.04em] text-white leading-[0.85] text-center select-none opacity-0 drop-shadow-[0_4px_60px_rgba(0,0,0,0.8)]"
           >
             Valantra
             <br />
