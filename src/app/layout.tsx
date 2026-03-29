@@ -1,4 +1,4 @@
-import type { Metadata } from "next";
+import type { Metadata, Viewport } from "next";
 import { Outfit, Space_Grotesk } from "next/font/google";
 import "./globals.css";
 import SmoothScroll from "@/components/SmoothScroll";
@@ -24,6 +24,14 @@ export const metadata: Metadata = {
   description: "Award-winning, hyper-modern digital agency specializing in best-in-class AI tools and elite web development.",
 };
 
+export const viewport: Viewport = {
+  width: "device-width",
+  initialScale: 1,
+  maximumScale: 1,
+  userScalable: false,
+  themeColor: "#050505",
+};
+
 export default function RootLayout({
   children,
 }: Readonly<{
@@ -34,7 +42,7 @@ export default function RootLayout({
       lang="en"
       className={`${outfit.variable} ${spaceGrotesk.variable} dark antialiased`}
     >
-      <body className="min-h-[100dvh] bg-[#000000] text-white selection:bg-[#ccff00] selection:text-black font-sans flex flex-col sm:cursor-none pb-24 md:pb-0">
+      <body className="min-h-[100dvh] bg-[#000000] text-white selection:bg-[#ccff00] selection:text-black font-sans flex flex-col sm:cursor-none">
         <Preloader />
         <WebGLBackground />
         <PageTransition />

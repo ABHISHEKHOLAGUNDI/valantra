@@ -80,7 +80,7 @@ export default function ContactSection() {
               onSubmit={handleNext}
               className="w-full flex flex-col gap-4 md:gap-6"
             >
-              <label className="font-display text-3xl md:text-5xl lg:text-[4vw] font-black uppercase tracking-tighter leading-tight drop-shadow-xl text-white">
+              <label className="font-display text-2xl md:text-5xl lg:text-[4vw] font-black uppercase tracking-tighter leading-tight drop-shadow-xl text-white">
                 {questions[step].text}
               </label>
               
@@ -90,7 +90,7 @@ export default function ContactSection() {
                   placeholder={questions[step].placeholder}
                   value={formData[step] || ""}
                   onChange={(e) => { playTypeSound(); setFormData({...formData, [step]: e.target.value}); }}
-                  className="w-full bg-transparent border-b border-white/20 text-2xl md:text-4xl lg:text-5xl font-sans py-3 focus:outline-none focus:border-[#ccff00] transition-colors placeholder:text-white/10 text-white shadow-none rounded-none"
+                  className="w-full bg-transparent border-b border-white/20 text-xl md:text-4xl lg:text-5xl font-sans py-2 md:py-3 focus:outline-none focus:border-[#ccff00] transition-colors placeholder:text-white/10 text-white shadow-none rounded-none"
                 />
               </div>
               

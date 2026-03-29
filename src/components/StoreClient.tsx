@@ -36,9 +36,9 @@ export default function StoreClient() {
              <div className="relative p-[1px] md:p-[2px] overflow-hidden rounded-[2rem] md:rounded-[3rem] z-10 w-full h-[380px] md:h-[450px] lg:h-[500px] group/holo">
                <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[200%] h-[200%] bg-[conic-gradient(from_0deg,transparent_0_270deg,#00f0ff_360deg)] animate-[spin_4s_linear_infinite] opacity-[0.05] group-hover/holo:opacity-30 transition-opacity duration-700" />
                
-               <AdvancedCard className="relative w-full h-full bg-[#050505] flex flex-col justify-between p-6 md:p-10 !rounded-[calc(2rem-2px)] md:!rounded-[calc(3rem-2px)]">
+               <AdvancedCard className="relative w-full h-full bg-[#050505] flex flex-col justify-between p-5 md:p-10 !rounded-[calc(2rem-2px)] md:!rounded-[calc(3rem-2px)]">
                   <div className="z-10 flex justify-between items-start" style={{ transform: "translateZ(30px)" }}>
-                     <div className="w-12 h-12 md:w-16 md:h-16 rounded-full bg-white/5 border border-white/10 flex items-center justify-center shrink-0">
+                     <div className="w-10 h-10 md:w-16 md:h-16 rounded-full bg-white/5 border border-white/10 flex items-center justify-center shrink-0">
                        {svc.icon}
                      </div>
                      <span className="font-sans text-[#00f0ff] px-3 md:px-4 py-1.5 md:py-2 border border-[#00f0ff]/30 rounded-full text-[9px] md:text-[10px] uppercase font-bold tracking-widest bg-black/50 backdrop-blur-md shadow-[0_0_15px_rgba(0,240,255,0.2)] whitespace-nowrap">{svc.label}</span>

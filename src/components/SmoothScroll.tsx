@@ -29,13 +29,12 @@ export default function SmoothScroll({ children }: { children: React.ReactNode }
     return () => window.removeEventListener("resize", handleResize);
   }, []);
 
-  // Eradicate JS Scroll hijacking on mobile for native app-feel
-  if (!mounted || isMobile) {
+  if (!mounted) {
     return <>{children}</>;
   }
 
   return (
-    <ReactLenis root options={{ lerp: 0.06, duration: 1.0, smoothWheel: true }}>
+    <ReactLenis root options={{ lerp: 0.08, duration: 1.2, smoothWheel: true, syncTouch: true, touchMultiplier: 2 }}>
       {children}
     </ReactLenis>
   );

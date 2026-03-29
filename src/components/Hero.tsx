@@ -185,7 +185,7 @@ export default function Hero({ location }: { location?: { city: string; state: s
           
           <div
             ref={titleRef}
-            className="font-display text-[clamp(2.5rem,13vw,10rem)] md:text-[clamp(5rem,11vw,13rem)] font-black uppercase tracking-[-0.04em] text-white leading-[0.85] text-center select-none opacity-0 drop-shadow-[0_4px_60px_rgba(0,0,0,0.8)]"
+            className="font-display text-[19vw] md:text-[clamp(5rem,11vw,13rem)] font-black uppercase tracking-[-0.04em] text-white leading-[0.85] text-center select-none opacity-0 drop-shadow-[0_4px_60px_rgba(0,0,0,0.8)]"
           >
             Valantra
             <br />

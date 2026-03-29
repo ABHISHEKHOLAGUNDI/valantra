@@ -74,10 +74,10 @@ export default function AdvantageSection({ location }: { location?: { city: stri
                ref={otherCardRef}
                className="bg-[#050505] border border-white/5 rounded-[2rem] p-6 md:p-14 flex flex-col items-start opacity-0"
              >
-               <h3 className="font-display font-black text-xl md:text-2xl uppercase tracking-widest mb-10 text-white/40 text-left">
+               <h3 className="font-display font-black text-lg md:text-2xl uppercase tracking-widest mb-8 md:mb-10 text-white/40 text-left">
                  {location ? `Average ${location.city} Agencies` : "Other Agencies"}
                </h3>
-               <ul className="flex flex-col gap-4 md:gap-6 font-mono text-sm md:text-[15px] text-white/30 w-full leading-relaxed">
+               <ul className="flex flex-col gap-4 md:gap-6 font-mono text-xs md:text-[15px] text-white/30 w-full leading-[1.4] md:leading-relaxed">
                  <li className="flex items-start gap-4"><span className="text-red-900/80 font-bold mt-[2px] text-lg shrink-0 leading-none">×</span> Generic WordPress Templates</li>
                  <li className="flex items-start gap-4"><span className="text-red-900/80 font-bold mt-[2px] text-lg shrink-0 leading-none">×</span> Single-threaded slow load times</li>
                  <li className="flex items-start gap-4"><span className="text-red-900/80 font-bold mt-[2px] text-lg shrink-0 leading-none">×</span> Basic UI Component copy-pasting</li>
@@ -106,53 +106,53 @@ export default function AdvantageSection({ location }: { location?: { city: stri
                {/* Subtle Noise Texture on Valantra Side */}
                <div className="absolute inset-0 bg-noise opacity-20 mix-blend-overlay pointer-events-none z-0" />
                
-               <h3 className="relative z-10 font-display font-black text-3xl md:text-4xl uppercase tracking-tighter mb-10 text-white text-left drop-shadow-md">Valantra Studio</h3>
+               <h3 className="relative z-10 font-display font-black text-2xl md:text-4xl uppercase tracking-tighter mb-8 md:mb-10 text-white text-left drop-shadow-md">Valantra Studio</h3>
                
-               <ul className="relative z-10 flex flex-col gap-4 md:gap-8 font-sans text-[15px] md:text-lg text-white/90 font-bold w-full leading-relaxed tracking-wide">
+               <ul className="relative z-10 flex flex-col gap-4 md:gap-8 font-sans text-[13px] md:text-lg text-white/90 font-bold w-full leading-[1.3] md:leading-relaxed tracking-wide">
                  <li className="flex items-start gap-4">
-                   <div className="flex items-center justify-center w-6 h-6 rounded-full border border-[#ccff00]/40 bg-[#ccff00]/10 shadow-[0_0_15px_rgba(204,255,0,0.3)] shrink-0 mt-[2px]">
+                   <div className="flex items-center justify-center w-4 h-4 md:w-6 md:h-6 rounded-full border border-[#ccff00]/40 bg-[#ccff00]/10 shadow-[0_0_15px_rgba(204,255,0,0.3)] shrink-0 mt-[4px] md:mt-[2px]">
                      <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="#ccff00" strokeWidth="4" strokeLinecap="round" strokeLinejoin="round"><polyline points="20 6 9 17 4 12"/></svg>
                    </div>
                    Bespoke Automated SaaS Platforms
                  </li>
                  <li className="flex items-start gap-4">
-                   <div className="flex items-center justify-center w-6 h-6 rounded-full border border-[#ccff00]/40 bg-[#ccff00]/10 shadow-[0_0_15px_rgba(204,255,0,0.3)] shrink-0 mt-[2px]">
+                   <div className="flex items-center justify-center w-4 h-4 md:w-6 md:h-6 rounded-full border border-[#ccff00]/40 bg-[#ccff00]/10 shadow-[0_0_15px_rgba(204,255,0,0.3)] shrink-0 mt-[4px] md:mt-[2px]">
                      <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="#ccff00" strokeWidth="4" strokeLinecap="round" strokeLinejoin="round"><polyline points="20 6 9 17 4 12"/></svg>
                    </div>
                    Hyper-Accelerated Edge Runtimes
                  </li>
                  <li className="flex items-start gap-4">
-                   <div className="flex items-center justify-center w-6 h-6 rounded-full border border-[#ccff00]/40 bg-[#ccff00]/10 shadow-[0_0_15px_rgba(204,255,0,0.3)] shrink-0 mt-[2px]">
+                   <div className="flex items-center justify-center w-4 h-4 md:w-6 md:h-6 rounded-full border border-[#ccff00]/40 bg-[#ccff00]/10 shadow-[0_0_15px_rgba(204,255,0,0.3)] shrink-0 mt-[4px] md:mt-[2px]">
                      <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="#ccff00" strokeWidth="4" strokeLinecap="round" strokeLinejoin="round"><polyline points="20 6 9 17 4 12"/></svg>
                    </div>
                    Awwwards-Level Custom Shader UI
                  </li>
                  <li className="flex items-start gap-4">
-                   <div className="flex items-center justify-center w-6 h-6 rounded-full border border-[#ccff00]/40 bg-[#ccff00]/10 shadow-[0_0_15px_rgba(204,255,0,0.3)] shrink-0 mt-[2px]">
+                   <div className="flex items-center justify-center w-4 h-4 md:w-6 md:h-6 rounded-full border border-[#ccff00]/40 bg-[#ccff00]/10 shadow-[0_0_15px_rgba(204,255,0,0.3)] shrink-0 mt-[4px] md:mt-[2px]">
                      <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="#ccff00" strokeWidth="4" strokeLinecap="round" strokeLinejoin="round"><polyline points="20 6 9 17 4 12"/></svg>
                    </div>
                    Proprietary Web3 AI Frameworks
                  </li>
                  <li className="flex items-start gap-4">
-                   <div className="flex items-center justify-center w-6 h-6 rounded-full border border-[#ccff00]/40 bg-[#ccff00]/10 shadow-[0_0_15px_rgba(204,255,0,0.3)] shrink-0 mt-[2px]">
+                   <div className="flex items-center justify-center w-4 h-4 md:w-6 md:h-6 rounded-full border border-[#ccff00]/40 bg-[#ccff00]/10 shadow-[0_0_15px_rgba(204,255,0,0.3)] shrink-0 mt-[4px] md:mt-[2px]">
                      <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="#ccff00" strokeWidth="4" strokeLinecap="round" strokeLinejoin="round"><polyline points="20 6 9 17 4 12"/></svg>
                    </div>
                    Sub-Second Global Architecture
                  </li>
                  <li className="flex items-start gap-4">
-                   <div className="flex items-center justify-center w-6 h-6 rounded-full border border-[#ccff00]/40 bg-[#ccff00]/10 shadow-[0_0_15px_rgba(204,255,0,0.3)] shrink-0 mt-[2px]">
+                   <div className="flex items-center justify-center w-4 h-4 md:w-6 md:h-6 rounded-full border border-[#ccff00]/40 bg-[#ccff00]/10 shadow-[0_0_15px_rgba(204,255,0,0.3)] shrink-0 mt-[4px] md:mt-[2px]">
                      <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="#ccff00" strokeWidth="4" strokeLinecap="round" strokeLinejoin="round"><polyline points="20 6 9 17 4 12"/></svg>
                    </div>
                    Algorithmic SEO Optimization Engine
                  </li>
                  <li className="flex items-start gap-4">
-                   <div className="flex items-center justify-center w-6 h-6 rounded-full border border-[#ccff00]/40 bg-[#ccff00]/10 shadow-[0_0_15px_rgba(204,255,0,0.3)] shrink-0 mt-[2px]">
+                   <div className="flex items-center justify-center w-4 h-4 md:w-6 md:h-6 rounded-full border border-[#ccff00]/40 bg-[#ccff00]/10 shadow-[0_0_15px_rgba(204,255,0,0.3)] shrink-0 mt-[4px] md:mt-[2px]">
                      <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="#ccff00" strokeWidth="4" strokeLinecap="round" strokeLinejoin="round"><polyline points="20 6 9 17 4 12"/></svg>
                    </div>
                    Real-Time Synchronous Collaboration
                  </li>
                  <li className="flex items-start gap-4">
-                   <div className="flex items-center justify-center w-6 h-6 rounded-full border border-[#ccff00]/40 bg-[#ccff00]/10 shadow-[0_0_15px_rgba(204,255,0,0.3)] shrink-0 mt-[2px]">
+                   <div className="flex items-center justify-center w-4 h-4 md:w-6 md:h-6 rounded-full border border-[#ccff00]/40 bg-[#ccff00]/10 shadow-[0_0_15px_rgba(204,255,0,0.3)] shrink-0 mt-[4px] md:mt-[2px]">
                      <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="#ccff00" strokeWidth="4" strokeLinecap="round" strokeLinejoin="round"><polyline points="20 6 9 17 4 12"/></svg>
                    </div>
                    Transparent Fixed-Scope Deployments
