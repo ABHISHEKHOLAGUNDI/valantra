@@ -149,17 +149,17 @@ export default function Hero({ location }: { location?: { city: string; state: s
       )}
 
 
-      {/* Ambient firefly particles (CSS) */}
+      {/* Ambient firefly particles (Optimized Deterministic DSA) */}
       <div className="absolute inset-0 z-[6] pointer-events-none overflow-hidden">
         {[...Array(8)].map((_, i) => (
           <div
             key={i}
             className="absolute w-1 h-1 rounded-full bg-[#ccff00]/40 animate-firefly"
             style={{
-              left: `${10 + Math.random() * 80}%`,
-              top: `${10 + Math.random() * 80}%`,
+              left: `${10 + ((i * 17) % 80)}%`,
+              top: `${10 + ((i * 31) % 80)}%`,
               animationDelay: `${i * 0.7}s`,
-              animationDuration: `${3 + Math.random() * 4}s`,
+              animationDuration: `${3 + ((i * 1.5) % 4)}s`,
             }}
           />
         ))}

@@ -1,6 +1,6 @@
 "use client";
 import Link from "next/link";
-import { useState, useEffect } from "react";
+import { useState, useEffect, useMemo } from "react";
 import { useLenis } from "lenis/react";
 import MagneticButton from "./MagneticButton";
 import { playHoverSound, playClickSound } from "@/utils/audio";
@@ -36,13 +36,13 @@ export default function Navigation() {
     return () => observer.disconnect();
   }, []);
 
-  const links = [
+  const links = useMemo(() => [
     { name: "Hero", path: "#home", icon: <HomeIcon /> },
     { name: "Advantage", path: "#advantage", icon: <AdvantageIcon /> },
     { name: "Workfolio", path: "#workfolio", icon: <WorkIcon /> },
     { name: "Store", path: "#store", icon: <StoreIcon /> },
     { name: "Contact", path: "#contact", icon: <ContactIcon /> },
-  ];
+  ], []);
 
   const handleSmoothScroll = (e: React.MouseEvent<HTMLAnchorElement>, hash: string) => {
     e.preventDefault();
